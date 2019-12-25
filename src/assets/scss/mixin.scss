@@ -1,0 +1,71 @@
+// 混入居中
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin alignItems($type: center) {
+  display: flex;
+  align-items: $type;
+}
+
+@mixin justifyContent($type: center) {
+  display: flex;
+  justify-content: $type;
+}
+
+@mixin ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@mixin beforeAfter {
+  content: '';
+  display: block;
+  height: 0;
+  width: 0;
+}
+
+//定义鼠标移入小手，不可选择内容
+@mixin cursor() {
+  cursor: pointer;
+  user-select: none;
+}
+
+
+@mixin bounceAni() {
+  opacity: 0;
+  transform: translate(0, 40px);
+  transition: ease-in-out $duration;
+
+  &.active {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+// 悬浮border效果
+@mixin hoverBorder($color:$themeColor) {
+  position: relative;
+
+  &:hover {
+    &::after {
+      width: 100%;
+      left: 0
+    }
+  }
+
+  &::after {
+    display: block;
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    background-color: $color;
+    transition: ease $duration-fast;
+  }
+}

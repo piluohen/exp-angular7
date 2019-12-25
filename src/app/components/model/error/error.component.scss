@@ -1,0 +1,40 @@
+@import "src/assets/scss/var.scss";
+
+.layout-error {
+  // padding: 20px;
+  height: 100%;
+  min-height: 680px;
+  // background-color: #EEF0F3;
+}
+
+.error-404 {
+  @include flexCenter;
+  height: 100%;
+  border-radius: 6px;
+
+  .error-container {
+    @include alignItems;
+  }
+
+  .error-img {
+    width: 275px;
+    height: 200px;
+    background: url('src/assets/img/404.png') center center no-repeat;
+  }
+
+  .error-content {
+    margin-left: 25px;
+    line-height: 1;
+  }
+
+  .error-title {
+    font-size: 24px;
+    color: $title;
+    margin-bottom: 16px;
+  }
+
+  .error-desc {
+    font-size: 14px;
+    color: $content;
+  }
+}

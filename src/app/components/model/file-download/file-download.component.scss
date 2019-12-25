@@ -1,0 +1,22 @@
+@import 'src/assets/scss/var.scss';
+
+.file_download {
+  padding: 20px;
+  border: 1px solid #ACD2FF;
+  border-radius: 6px;
+  width: 100%;
+
+  .item {
+
+    &+.item {
+      margin-top: 20px;
+    }
+  }
+
+  img {
+    display: inline-block;
+    width: 21px;
+    height: 18px;
+    margin-right: 10px;
+  }
+}

@@ -1,0 +1,10 @@
+<div class="filter-list">
+  <nz-radio-group
+    *ngFor='let data of filterList'
+    [(ngModel)]="data.value"
+    [nzButtonStyle]="'solid'"
+    (ngModelChange)="getList()">
+    <span>{{data.item}}</span>
+    <label nz-radio-button *ngFor='let items of data.children,index as index' nzValue="index">{{items}}</label>
+  </nz-radio-group>
+</div>

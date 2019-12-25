@@ -1,0 +1,93 @@
+<div class="header"
+  [ngClass]="{'home_top': homeTop}"
+  appScroll
+  scrollType="scroll"
+  [scrollHeight]="100"
+  [scrollClose]="!isHome"
+  (scrollChange)="handleScrollChange($event)">
+  <div class="header_top">
+    <div class="header_left">
+      <div class="header_logo" (click)="jumpHome()">
+        <!-- <div class="header_logo_icon"></div>
+        <div class="header_logo_title">国际科技园企业服务平台</div> -->
+        <hn-button type="danger">危险按钮</hn-button>
+        <hn-button type="warning">警告按钮</hn-button>
+        <hn-button type="primary">警告按钮</hn-button>
+      </div>
+      <!--头部菜单-->
+      <div class="header_nav">
+        <ul nz-menu [nzMode]="'horizontal'" class="show-menu">
+          <ng-container *ngFor="let menu of menuList; index as index">
+            <li
+              *ngIf="!menu.children || menu.children.length <= 1"
+              class="first-menu hover_border"
+              nz-menu-item
+              [ngClass]="menu.selected ? 'ant-menu-item-selected' : ''"
+              [nzSelected]="menu.selected"
+              (click)="toLink(menu)">
+              {{ menu.name }}
+            </li>
+            <li
+              *ngIf="menu.children && menu.children.length > 1"
+              nz-submenu
+              class="caret-pic first-menu hover_border"
+              [ngClass]="menu.selected ? 'ant-menu-submenu-selected' : ''"
+              (click)="toLink(menu)">
+              <span title>{{ menu.name }}</span>
+              <ng-container>
+                <ul>
+                  <ng-container *ngFor="let children of menu.children; index as index">
+                    <li
+                      nz-menu-item
+                      class="child-menu"
+                      [ngClass]="children.selected ? 'ant-menu-item-selected' : ''"
+                      [nzSelected]="children.selected"
+                      (click)="toLink(children)">
+                      {{ children.name }}
+                    </li>
+                  </ng-container>
+                </ul>
+              </ng-container>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+      <!-- end 头部菜单-->
+    </div>
+    <div class="header_right">
+      <button
+        class="header_search_btn"
+        nz-button
+        [nzType]="homeTop ? 'default' : 'primary'"
+        nzShape="round"
+        [nzGhost]="true">
+        <i nz-icon type="search"></i>搜索
+      </button>
+      <button
+        nz-button
+        nzType="link"
+        [nzGhost]="homeTop">注册登录</button>
+    </div>
+  </div>
+
+  <div class="header_page" [ngStyle]="setPageStyle()" *ngIf="!isHome">
+    <img class="header_page_bg" [src]="activeMenu.imgUrl" [alt]="activeMenu.name">
+    <div class="header_page_container">
+      <!-- <div class="header_page_title">{{activeMenu.name}}</div> -->
+      <div class="header_page_title">
+        <img [src]="activeMenu.font" [alt]="activeMenu.name">
+      </div>
+      <nz-tabset
+        [nzTabPosition]="'top'"
+        [nzType]="'card'"
+        nzSize="large"
+        [(nzSelectedIndex)]="nzSelectedIndex">
+        <nz-tab
+          *ngFor="let item of activeMenu.children"
+          [nzTitle]="item.name"
+          (nzClick)="handleTabClick(item)">
+        </nz-tab>
+      </nz-tabset>
+    </div>
+  </div>
+</div>

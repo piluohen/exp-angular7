@@ -1,0 +1,104 @@
+<div class="header">
+  <div [class]="bg ? 'bg1' : 'bg2'">
+    <div class="container">
+      <!-- 头部图标和登录 -->
+      <div class="logo-login">
+        <div class="logo">
+          <img [src]="rootPath + 'assets/img/header/logo_white.png'" alt="国际科技园区综合服务平台" />
+          <div class="title">
+            <h1>国际科技园区综合服务平台</h1>
+            <nz-divider nzText="www.gjwlyq.gov.cn"></nz-divider>
+          </div>
+          <div class="address">
+            <nz-dropdown>
+              <a nz-dropdown>
+                郑州园区
+                <i nz-icon nzType="down"></i>
+                <span>切换区域或园区</span>
+              </a>
+              <ul class="dropdown" nz-menu nzSelectable>
+                <li nz-menu-item>
+                  <a>国际科技园</a>
+                </li>
+                <li nz-menu-item>
+                  <a> 上海贝尔园区</a>
+                </li>
+                <li nz-menu-item>
+                  <a>湖南华诺园区</a>
+                </li>
+                <li nz-menu-item>
+                  <a>长沙联通园区</a>
+                </li>
+              </ul>
+            </nz-dropdown>
+          </div>
+        </div>
+        <div class="login">
+          <button class="sign-in">注册</button>
+          <button class="sign-up">登录</button>
+        </div>
+      </div>
+      <!--头部菜单-->
+      <div class="nav-bar-warp nav">
+        <div class="container">
+          <ul nz-menu [nzMode]="'horizontal'" class="show-menu" style="padding-top: 6px;border-bottom: 0;">
+            <ng-container *ngFor="let menu of menuList; index as index">
+              <li
+                *ngIf="!menu.children"
+                class="first-menu"
+                nz-menu-item
+                [ngClass]="menu.selected ? 'ant-menu-item-selected' : ''"
+                [nzSelected]="menu.selected"
+                (click)="toLink(menu.url)">
+                {{ menu.name }}
+              </li>
+              <li
+                *ngIf="menu.children"
+                nz-submenu
+                class="caret-pic first-menu"
+                [nzOpen]="menu.selected"
+                [ngClass]="menu.selected ? 'ant-menu-submenu-selected' : ''">
+                <span title>{{ menu.name }}</span>
+                <ng-container *ngIf="menu.children">
+                  <ul>
+                    <ng-container *ngFor="let children of menu.children; index as index">
+                      <li
+                        nz-menu-item
+                        *ngIf="!children.children"
+                        [nzSelected]="menu.selected && index === 0"
+                        class="child-menu"
+                        (click)="toLink(children.url)">
+                        {{ children.name }}
+                      </li>
+                      <li nz-submenu *ngIf="children.children" class="child-menu">
+                        <span title>
+                          {{ children.name }}
+                          <i nz-icon nzType="caret-down" nzTheme="outline"></i>
+                        </span>
+                        <ul style="padding: 0 15px;">
+                          <li
+                            nz-menu-item
+                            [class]="'second-menu pic' + index"
+                            [nzSelected]="menu.selected && index === 0">
+                            {{ children.name }}
+                          </li>
+                          <ng-container *ngFor="let child of children.children; last as lastIndex">
+                            <li class="third-menu" nz-menu-item (click)="toLink(child.url)">
+                              {{ child.name }}
+                              <nz-divider nzType="vertical" *ngIf="!lastIndex"></nz-divider>
+                            </li>
+                          </ng-container>
+                        </ul>
+                      </li>
+                    </ng-container>
+                  </ul>
+                </ng-container>
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div>
+      <!-- end 头部菜单-->
+    </div>
+  </div>
+</div>

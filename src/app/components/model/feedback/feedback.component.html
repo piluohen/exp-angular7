@@ -1,0 +1,35 @@
+<div class="feedback">
+  <div class="feedback-content">
+    <form nz-form nzLayout="vertical" [formGroup]="validateForm">
+      <nz-form-item>
+        <nz-form-label nzFor="note">问题和意见</nz-form-label>
+        <nz-form-control>
+          <textarea nz-input formControlName="note" maxlength="200" rows="7" placeholder="请简要描写你的问题和意见"></textarea>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>反馈图片</nz-form-label>
+        <nz-form-control>
+          <nz-upload
+            nzListType="picture-card"
+            [(nzFileList)]="fileList"
+            [nzShowButton]="fileList.length < 3"
+            [nzShowUploadList]="showUploadList"
+            [nzPreview]="handlePreview"
+            [nzRemove]="handleDelete"
+            [nzBeforeUpload]="beforeUpload">
+            <div class="upload-btn">
+              <i nz-icon nzType="plus"></i>
+              <span>上传照片</span>
+            </div>
+          </nz-upload>
+          <div class="msg">只支持.jpg 格式</div>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </div>
+  <div class="feedback-footer">
+    <button nz-button nzType="default" (click)="handleCancel()">取消</button>
+    <button nz-button nzType="primary" (click)="handleConfirm()">确定</button>
+  </div>
+</div>

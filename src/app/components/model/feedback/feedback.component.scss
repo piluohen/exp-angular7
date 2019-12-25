@@ -1,0 +1,29 @@
+@import 'src/assets/scss/var.scss';
+
+.feedback {
+  width: 600px;
+
+  .feedback-content {
+    padding: 20px 20px 0 20px;
+  }
+
+  .msg {
+    color: $gray;
+  }
+
+  textarea.ant-input {
+    border-color: rgba($primary, .4);
+    resize: none;
+  }
+
+  .feedback-footer {
+    padding: 10px 20px;
+    @include alignItems;
+    justify-content: flex-end;
+    border-top: 1px solid $border;
+
+    .ant-btn+.ant-btn {
+      margin-left: 10px;
+    }
+  }
+}

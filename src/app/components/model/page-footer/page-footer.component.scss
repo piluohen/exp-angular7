@@ -1,0 +1,173 @@
+@import 'src/assets/scss/var.scss';
+
+.footer {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-image: url('src/assets/img/footer/bg.png');
+}
+
+.footer_content {
+  font-size: 12px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.45);
+  display: flex;
+  justify-content: space-between;
+  padding-top: 48px;
+  .title {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .entry_wrap {
+    width: 160px;
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+
+      span {
+        @include cursor;
+        padding: 6px 8px;
+        background: rgba(38, 46, 65, 1);
+        border-radius: 2px;
+        opacity: 0.6;
+        margin: 6px 12px 6px 0;
+
+        &:hover {
+          opacity: 0.8;
+          color: rgba(255, 255, 255, 0.85);
+        }
+      }
+    }
+  }
+
+  .interactive_wrap {
+    .content > div {
+      display: flex;
+      margin-bottom: 6px;
+
+      img {
+        width: 16px;
+        height: 16px;
+        margin: 2px 7px 0 0;
+      }
+
+      h5 {
+        font-weight: 500;
+        margin-bottom: 8px;
+        color: rgba(255, 255, 255, 0.85);
+      }
+
+      p {
+        margin-bottom: 4px;
+      }
+    }
+  }
+
+  .resource_wrap {
+    position: relative;
+    width: 498px;
+    height: 257px;
+
+    .content {
+      @include cursor;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 215px;
+      color: rgba(255, 255, 255, 0.45);
+      background: url('src/assets/img/footer/map.png');
+      background-size: cover;
+      .point {
+        position: absolute;
+        top: 72px;
+        left: 191px;
+        text-align: center;
+        div {
+          width: 100px;
+          height: 35px;
+          text-align: center;
+          line-height: 28px;
+          background: url('src/assets/img/footer/little-bg2.png');
+          background-size: cover;
+        }
+        &:hover {
+          opacity: 0.8;
+          color: rgba(255, 255, 255, 0.85);
+        }
+      }
+    }
+  }
+
+  .care_wrap {
+    .content {
+      display: flex;
+      ul {
+        list-style: none;
+        padding: 0;
+        li {
+          @include cursor;
+          margin-bottom: 10px;
+        }
+        & > li:first-child {
+          color: rgba(255, 255, 255, 0.85);
+        }
+      }
+      .img {
+        position: relative;
+        width: 140px;
+        height: 135px;
+        margin: -23px 0 0 -5px;
+        background-image: url('src/assets/img/footer/bgCode.png');
+        img {
+          width: 112px;
+          height: 112px;
+          position: absolute;
+          right: 2px;
+          bottom: 4px;
+        }
+      }
+    }
+
+    // span {
+    //   @include cursor;
+    //   display: block;
+    //   margin-bottom: 10px;
+    //   &:hover {
+    //     color: rgba(255, 255, 255, 0.85);
+    //   }
+    // }
+    // .qrcode {
+    //   display: inline-block;
+    //   width: 112px;
+    //   height: 112px;
+    // }
+  }
+}
+
+.copyright {
+  height: 47px;
+  line-height: 47px;
+  width: $contentWidth;
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid rgba(73, 80, 89, 0.27);
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-family: PingFang-SC-Regular, PingFang-SC;
+  font-weight: 400;
+
+  span {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  div > span {
+    color: rgba(255, 255, 255, 0.45);
+    margin-left: 30px;
+  }
+}

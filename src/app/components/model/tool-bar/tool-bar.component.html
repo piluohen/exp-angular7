@@ -1,0 +1,41 @@
+<ul class="tool-wrap"
+  @fadeMotion
+  *ngIf="visible"
+  [ngClass]="{'visible': visible}">
+  <!-- <li><i nz-icon nzType="cloud-upload" nzTheme="outline"></i></li> -->
+
+  <li nz-popover [nzTitle]="null" nzContent="客服：186-2195-818"
+    nzPlacement="left">
+    <i nz-icon nzType="phone" nzTheme="outline"></i>
+  </li>
+
+  <li nz-popover [nzTitle]="null" [nzContent]="contentTemp"
+    nzPlacement="left">
+    <i nz-icon nzType="qrcode" nzTheme="outline"></i>
+    <ng-template #contentTemp>
+      <img class="qrcode" [src]="qrcodeUrl" alt="二维码">
+    </ng-template>
+  </li>
+
+  <li
+    nz-popover
+    nzTitle="问题反馈"
+    [(nzVisible)]="feedbackVisible"
+    nzOverlayClassName="feedback_popover"
+    nzTrigger="click"
+    [nzContent]="feedbackTemp"
+    nzPlacement="leftBottom">
+    <i nz-icon nzType="message" nzTheme="outline"></i>
+    <ng-template #feedbackTemp>
+      <app-feedback (cancel)="handleCancel()"></app-feedback>
+    </ng-template>
+  </li>
+
+  <li (click)="clickBackTop()">
+    <i nz-icon nzType="vertical-align-top" nzTheme="outline"></i>
+  </li>
+
+  <li>
+    <a class="zhdj_bar" href="http://47.108.73.33:8080/hntlfront/#/signin" target="_black">智慧党建</a>
+  </li>
+</ul>

@@ -1,0 +1,230 @@
+.ant-layout {
+  background: transparent;
+}
+
+.ant-dropdown {
+  margin: 0 !important;
+}
+
+.ant-dropdown-menu-item:hover,
+.ant-dropdown-menu-submenu-title:hover {
+  background-color: transparent;
+}
+
+.ant-card-head {
+  background: rgba($primary, 0.03);
+}
+
+.ant-input-number,
+.ant-calendar-picker {
+  width: 100%;
+}
+
+// .ant-form {
+//   .ant-form-item {
+//     margin-bottom: 20px;
+//     @include alignItems;
+
+//     nz-col {
+//       @include alignItems;
+//     }
+
+//     &.ant-textarea-item {
+//       align-items: flex-start;
+//     }
+//   }
+
+//   .ant-form-item-control,
+//   .ant-form-item-label {
+//     line-height: inherit;
+//     vertical-align: middle;
+//   }
+// }
+
+.ant-card {
+  .ant-card-head-title {
+    font-size: 14px;
+  }
+
+  &.ant-card-contain-tabs > .ant-card-head .ant-card-head-title {
+    padding-bottom: 20px;
+  }
+
+  .ant-tabs {
+    .ant-tabs-tab {
+      font-size: 14px;
+    }
+  }
+}
+
+.ant-steps-small {
+  .ant-steps-item-description {
+    font-size: 12px;
+  }
+
+  .ant-steps-item-finish {
+    .ant-steps-item-tail::after {
+      background-color: $success;
+    }
+
+    .ant-steps-item-icon {
+      border-color: $success;
+
+      .ant-steps-icon {
+        color: $success;
+      }
+    }
+  }
+}
+
+.ant-timeline {
+  .ant-timeline-item {
+    padding-bottom: 50px;
+  }
+}
+
+// .ant-btn-danger {
+//   background-color: $danger;
+//   color: $white;
+//   border-color: $danger;
+
+//   &:focus,
+//   &:active {
+//     background-color: $danger;
+//     color: $white;
+//     border-color: $danger;
+//   }
+
+//   &:hover {
+//     opacity: 0.8;
+//   }
+// }
+
+.ant-spin-nested-loading {
+  height: 100%;
+}
+
+.ant-spin-container {
+  height: 100%;
+}
+
+.ant-radio-group {
+  display: block;
+  line-height: 56px;
+
+  .ant-radio-button-wrapper {
+    margin: 0 0 0 10px;
+    border-radius: 4px;
+    color: rgba(0, 0, 0, 0.8);
+    border: 1px solid transparent !important;
+  }
+
+  .ant-radio-button-wrapper:not(:first-child)::before {
+    width: 0;
+  }
+
+  .ant-radio-button-wrapper-checked,
+  .ant-radio-button-wrapper-checked:hover {
+    box-shadow: none;
+    background-color: rgba($primary, 0.18);
+  }
+
+  .ant-radio-button-wrapper:hover {
+    background-color: rgba($primary, 0.18);
+  }
+}
+
+.feedback_popover {
+  .ant-popover-title {
+    padding: 16px 20px;
+  }
+
+  .ant-popover-inner-content {
+    padding: 0;
+  }
+}
+
+// 重置tag
+
+.ant-tag {
+  padding: 3px 11px;
+}
+
+// 重置描述列表
+.ant-descriptions {
+  &.bordered .ant-descriptions-item-label {
+    background-color: $primary-light;
+  }
+
+  .ant-descriptions-item-content {
+    color: $gray;
+  }
+}
+
+// 重置table
+nz-table .ant-table table {
+  border-collapse: collapse;
+
+  .ant-table-thead > tr > th {
+    background-color: $primary-light;
+  }
+}
+
+// 重置alert
+.ant-alert {
+  &.ant-alert-warning {
+    color: $orange;
+
+    .ant-alert-icon {
+      color: $orange;
+    }
+  }
+
+  &.ant-alert-info {
+    color: $primary;
+  }
+}
+
+// 重置弹框
+.ant-modal-wrap {
+  @include flexCenter;
+
+  .ant-modal {
+    position: static;
+    top: 0;
+  }
+}
+
+// 重置menu
+.ant-menu-submenu-popup > .ant-menu-sub {
+  min-width: 0;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  padding: 20px 0;
+
+  .ant-menu-item {
+    padding: 0;
+    height: 30px;
+    line-height: 30px;
+  }
+
+  &::before,
+  &::after {
+    display: block;
+    content: '';
+    width: calc(100% - 12px);
+    height: 2px;
+    background-color: $warning;
+    position: absolute;
+    left: 6px;
+  }
+
+  &::before {
+    top: 10px;
+  }
+
+  &::after {
+    bottom: 10px;
+  }
+}

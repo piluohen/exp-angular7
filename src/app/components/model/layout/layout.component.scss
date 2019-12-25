@@ -1,0 +1,29 @@
+@import 'src/assets/scss/var.scss';
+
+.body_layout {
+  height: 100%;
+  min-width: 1240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $background;
+}
+
+.layout_container {
+  flex: 1;
+  background-color: $background;
+  padding-bottom: 60px;
+}
+
+.zhdj_bar {
+  @include flexCenter;
+  width: 98px;
+  height: 98px;
+  position: fixed;
+  right: 8px;
+  bottom: 8px;
+  z-index: 123456;
+  background: url('src/assets/img/zhdj.png') no-repeat;
+  font-size: 32px;
+  color: $white;
+}

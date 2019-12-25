@@ -1,0 +1,221 @@
+<div class="index">
+  <!-- 头部 -->
+  <div class="hd">
+    <div class="ind_header container">
+      <div class="index_header">
+        <p>国际科技园区欢迎您！</p>
+        <div class="search">
+          <input type="text" placeholder="请输入您要查询的事务或办理的事项" />
+          <button nz-button>查询</button>
+          <div class="keywords">
+            <span>热门搜索：</span>
+            <ul>
+              <li>孵化器</li>
+              <li>创业联盟</li>
+              <li>产业合作</li>
+              <li>创业研修</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="header_recom">
+        <p>推荐咨询服务</p>
+        <div class="recom_list" *ngFor='let item of recomArray'>
+          <div>{{item}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 主要服务模块 -->
+  <div class="mainServise container">
+    <div class="sub">
+      <div class='subLogin'>
+        <div class='subLoginUser'>
+          <img [src]="rootPath+'assets/img/home/portrait.png'" alt="用户头像">
+          <p>Hi！你好！</p>
+          <span>登录后可在线办理业务，助您少跑腿！</span>
+        </div>
+        <div class='btns'>
+          <button nz-button class='leftBtn'>登录</button>
+          <button nz-button nzType="default" class='rightBtn'>注册</button>
+        </div>
+      </div>
+      <div class='subRequire'>
+        <nz-tabset>
+          <nz-tab nzTitle="办件查询">
+            <form nz-form>
+              <nz-form-item>
+                <nz-form-control>
+                  <nz-input-group class="number">
+                    <input type="text" nz-input placeholder="办件编码" />
+                  </nz-input-group>
+                </nz-form-control>
+              </nz-form-item>
+              <nz-form-item>
+                <nz-form-control>
+                  <nz-input-group class="code">
+                    <input type="text" nz-input placeholder="验证码" />
+                    <img [src]="rootPath+'assets/img/home/yanzheng.png'" alt="">
+                  </nz-input-group>
+                </nz-form-control>
+              </nz-form-item>
+              <nz-form-item>
+                <nz-form-control class="btns">
+                  <button nz-button class='leftBtn'>查询</button>
+                  <button nz-button class='rightBtn'>重置</button>
+                </nz-form-control>
+              </nz-form-item>
+            </form>
+          </nz-tab>
+          <nz-tab nzTitle="其他查询">
+            其他查询
+          </nz-tab>
+        </nz-tabset>
+      </div>
+    </div>
+    <div class="service">
+      <nz-tabset>
+        <nz-tab nzTitle="企业服务">
+          <div class="entServ" nz-row nzType="flex" nzJustify="space-around">
+            <div class="entServItem" nz-col nzSpan="4" *ngFor='let item of entServiceArray'>
+              <div class="entServItemImg"><img [src]=item.servImgUrl alt=""></div>
+              <div>{{item.title}}</div>
+            </div>
+          </div>
+        </nz-tab>
+        <nz-tab nzTitle="个人服务">
+          <div class="entServ" nz-row nzType="flex" nzJustify="space-around">
+            <div class="entServItem" nz-col nzSpan="4" *ngFor='let item of entServiceArray'>
+              <div class="entServItemImg"><img [src]=item.servImgUrl alt=""></div>
+              <div>{{item.title}}</div>
+            </div>
+          </div>
+        </nz-tab>
+      </nz-tabset>
+      <div *ngFor='let item of wantArray' class="wantDo">
+        <div class="wantImg"><img [src]=item.wantImgUrl alt=""></div>
+        <div>
+          <p>{{item.title}}</p>
+          <span>{{item.cont}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 推荐模块 -->
+  <div class="recommend container">
+    <!-- 资源推荐 -->
+    <div class="resource">
+      <div class="title">
+        <img [src]="leftImg" />
+        <span>场地资源推荐</span>
+        <img [src]="rightImg" />
+      </div>
+      <ul class="content">
+        <li *ngFor='let item of recomAddress'  (click)="clickAdd(item)"  [class]=" item.active? 'active' : ''">
+          <img [src]="item.addImgUrl" [alt]="item.title" />
+          <div class="info">
+            <div class="info_tit">{{item.title}}</div>
+            <div class="info_add">{{item.address}}</div>
+            <div class="info_count">{{item.count}}</div>
+            <div class="info_source">{{item.source}}</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- 导师推荐 -->
+    <div class="master">
+      <div class="title">
+        <img [src]="leftImg" />
+        <span>推荐导师</span>
+        <img [src]="rightImg" />
+      </div>
+      <ul class="mas_content">
+        <li *ngFor='let item of recomMaster'>
+          <img [src]="item.masImgUrl" alt="" />
+          <div class="info">
+            <div class="name">{{item.name}}</div>
+            <div class="split"></div>
+            <div class="main">
+              关注领域
+              <p>{{item.main}}</p>
+            </div>
+            <div class="description">{{item.description}}</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- 服务推荐 -->
+    <div class="services">
+      <div class="title">
+        <img [src]="leftImg" />
+        <span>推荐服务</span>
+        <img [src]="rightImg" />
+      </div>
+      <ul class="content">
+        <li *ngFor='let item of recomService'  (click)="clickServ(item)"  [class]=" item.active? 'active' : ''">
+          <img [src]="item.servImgUrl" [alt]="item.title" />
+          <div class="info">
+            <div class="info_tit">{{item.title}}</div>
+            <div class="info_count">{{item.content}}</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- 园区新闻 -->
+    <div class="news">
+      <div class="title">
+        <img [src]="leftImg" />
+        <span>园区新闻</span>
+        <img [src]="rightImg" />
+      </div>
+      <div class="news_content">
+        <div class="news_wrap">
+          <div class="carousel-wrap">
+            <div class="carousel-btn carousel-btn-prev" (click)="handlePrev()">
+              <i nz-icon nzType="left" nzTheme="outline"></i>
+            </div>
+            <nz-carousel #carousel nzAutoPlay class="small-point" [nzDots]="false">
+              <div nz-carousel-content *ngFor="let item of newsCaro">
+                <div class="news-arousel-content">
+                  <img [src]="item.newsImgUrl" alt="">
+                  <p class="news-carousel-brief">{{item.title}}</p>
+                </div>
+              </div>
+            </nz-carousel>
+            <div class="carousel-btn carousel-btn-next" (click)="handleNext()">
+              <i nz-icon nzType="right" nzTheme="outline"></i>
+            </div>
+          </div>
+        </div>
+        <div class="news_list">
+          <div class="news_main" *ngFor='let item of newsMain'>
+            <h5>{{item.title}}</h5>
+            <p>{{item.content}}<span>【详情】</span></p>
+          </div>
+          <ul *ngFor='let item of newsListArray'>
+            <li class="news_item">
+              <div class="newsTitle">{{item.title}}</div>
+              <div class="newsDate">{{item.date}}</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- 专题报告 -->
+    <div class="reports">
+      <div class="title">
+        <img [src]="leftImg" />
+        <span>专题报告</span>
+        <img [src]="rightImg" />
+      </div>
+      <div>
+        <ul class="rep_content">
+          <li *ngFor='let item of reportImg'>
+            <a><img [src]="item" alt="" /></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

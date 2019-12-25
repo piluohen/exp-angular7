@@ -1,0 +1,35 @@
+@import 'src/assets/scss/var.scss';
+
+.littleTit {
+  position: relative;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(17, 17, 17, 1);
+
+  div {
+    padding: 0 2px;
+    z-index: 1;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 18px;
+      z-index: -1;
+      left: 0;
+      height: 8px;
+      width: 68px;
+      background-color: RGBA(158, 199, 245, 1);
+    }
+  }
+}
+
+.little_tip {
+  padding: 15px 20px;
+  @include alignItems;
+  background: url('src/assets/img/icon4.png') left center / auto 50% no-repeat;
+  font-size: 20px;
+  color: $title;
+}

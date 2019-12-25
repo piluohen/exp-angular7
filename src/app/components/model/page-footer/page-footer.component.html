@@ -1,0 +1,89 @@
+<div class="footer">
+  <div class="inner">
+    <div class="footer_content">
+      <div class="entry_wrap">
+        <div class="title">快捷入口</div>
+        <div class="content">
+          <span *ngFor='let item of entryList' (click)='goAppointPage(item.link)'>
+            {{item.name}}
+          </span>
+        </div>
+      </div>
+      <div class="interactive_wrap">
+        <div class="title">联系我们</div>
+        <div class="content">
+          <div class="time">
+            <img [src]="rootPath+'assets/img/footer/time.png'" alt="">
+            <div class="info">
+              <h5>周一至周日(节假日除外）</h5>
+              <p>9:00~12:00 AM</p>
+              <p>14:00~17:30 PM</p>
+            </div>
+          </div>
+          <div class="contact">
+            <img [src]="rootPath+'assets/img/footer/call.png'" alt="">
+            <div class="info">
+              <h5>热线电话</h5>
+              <p>400-1739-9483(客服)</p>
+              <p>400-1739-8402(技术)</p>
+            </div>
+          </div>
+          <div class="email">
+            <img [src]="rootPath+'assets/img/footer/mail.png'" alt="">
+            <div class="info">
+              <h5>邮箱</h5>
+              <p>manage@huanuo.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="resource_wrap">
+        <div class="title">园区地址</div>
+        <a class="content" href="https://j.map.baidu.com/cf/TJs" target="_black">
+          <div class="point">
+            <div>国际科技园</div>
+          </div>
+        </a>
+      </div>
+      <div class="care_wrap">
+        <div class="title">移动端</div>
+        <div class="content">
+          <ul>
+            <li>App</li>
+            <li>公众号</li>
+            <li>小程序</li>
+          </ul>
+          <div class="img">
+            <img [src]="rootPath+'assets/img/qrcode.png'" alt="APP二维码">
+          </div>
+          <!-- <span nz-popover [nzContent]="contentTempAPP" [(nzVisible)]="visible" nzPlacement="rightTop">
+            APP
+            <ng-template #contentTempAPP>
+              <img class="qrcode" [src]="rootPath+'assets/img/qrcode.png'" alt="APP二维码">
+            </ng-template>
+          </span>
+          <span nz-popover [nzContent]="" nzPlacement="rightTop">
+            公众号
+            <ng-template #contentTempGZH>
+              <img class="qrcode" [src]="rootPath+'assets/img/qrcode.png'" alt="公众号二维码">
+            </ng-template>
+          </span>
+          <span nz-popover [nzContent]="" nzPlacement="rightTop">
+            小程序
+            <ng-template #contentTempXCX>
+              <img class="qrcode" [src]="rootPath+'assets/img/qrcode.png'" alt="小程序二维码">
+            </ng-template>
+          </span> -->
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>Copyright 2008 - 2019 Huanuo. All Rights Reserved</span>
+      <div>
+        <span>主办单位：国际科技园企业发展服务中心</span>
+        <span>备案：豫ICP备12000333号-3</span>
+        <span>豫公网安备：33151225666955号</span>
+      </div>
+    </div>
+  </div>
+</div>

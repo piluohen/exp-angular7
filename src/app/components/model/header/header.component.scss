@@ -1,0 +1,256 @@
+@import 'src/assets/scss/var.scss';
+
+.header {
+  width: 100vw;
+  height: 125px;
+  box-sizing: content-box;
+}
+
+.bg1 {
+  background: url('src/assets/img/home/bg1.png') no-repeat;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bg2 {
+  background: url('src/assets/img/home/bg5.png') no-repeat;
+  background-size: 1920px 125px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.container {
+  width: 1040px;
+  margin: 0 auto;
+}
+
+.logo-login {
+  padding-top: 21px;
+}
+
+.logo {
+  float: left;
+  display: flex;
+}
+
+.logo img {
+  width: 61px;
+  height: 35px;
+  font-size: 10px;
+}
+
+.title {
+  margin: 0 20px;
+}
+
+.title h1 {
+  width: 264px;
+  height: 22px;
+  font-size: 22px;
+  font-family: FZCuSong-B09S;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 21px;
+  opacity: 0.9;
+}
+
+.ant-divider-horizontal {
+  margin: 0;
+  font-size: 16px;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  opacity: 0.7;
+}
+
+.address {
+  width: 100px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: PingFang SC;
+  font-weight: 500;
+  margin-left: 20px;
+}
+
+.address a {
+  color: #fff;
+  margin-left: 7px;
+}
+
+.address span {
+  display: block;
+  width: 84px;
+  height: 12px;
+  line-height: 12px;
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.5;
+  margin-left: 7px;
+}
+
+.dropdown {
+  margin-top: 8px;
+
+  a {
+    font-size: 12px;
+
+    &:hover {
+      color: RGBA(63, 130, 228, 1);
+    }
+  }
+}
+
+.login {
+  float: right;
+}
+
+.login button {
+  width: 60px;
+  height: 28px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  font-family: PingFang SC;
+  line-height: 21px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.sign-in {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.sign-up {
+  background-color: #1f66d8;
+}
+
+// 导航
+.nav {
+  margin-top: 51px;
+  font-weight: 600;
+}
+
+.ant-menu-horizontal {
+  background: none;
+}
+
+:host ::ng-deep .ant-menu-submenu-title {
+  padding: 0 5px;
+}
+
+.ant-menu-horizontal>.ant-menu-item-selected {
+  &::after {
+    height: 3px;
+  }
+}
+
+.nav li {
+  margin-right: 28px;
+  height: 40px;
+  padding: 0 10px;
+}
+
+.nav li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 0;
+  background-color: #fff;
+}
+
+:host ::ng-deep .ant-menu-horizontal>.ant-menu-submenu:hover,
+:host ::ng-deep .ant-menu-horizontal>.ant-menu-item:hover {
+  &::after {
+    height: 3px;
+  }
+}
+
+:host ::ng-deep .ant-menu-horizontal>.ant-menu-submenu:hover,
+:host ::ng-deep .ant-menu-horizontal>.ant-menu-submenu,
+:host ::ng-deep .ant-menu-horizontal>.ant-menu-item-selected,
+:host ::ng-deep .ant-menu-horizontal>.ant-menu-item {
+  border-bottom: 0;
+}
+
+:host ::ng-deep .ant-menu-horizontal>.ant-menu-submenu:hover,
+:host ::ng-deep .ant-menu-horizontal>.ant-menu-submenu:active,
+:host ::ng-deep .ant-menu-horizontal>.ant-menu-submenu:focus,
+:host ::ng-deep .ant-menu-submenu-title:hover,
+:host ::ng-deep .ant-menu-submenu-title:active,
+:host ::ng-deep .ant-menu-submenu-title:focus,
+:host ::ng-deep .ant-menu-horizontal>.ant-menu-item-selected,
+:host ::ng-deep .ant-menu-horizontal>.ant-menu-submenu-selected,
+:host ::ng-deep .ant-menu-horizontal>.ant-menu-item:hover,
+:host ::ng-deep .ant-menu-horizontal>.ant-menu-item:active,
+:host ::ng-deep .ant-menu-horizontal>.ant-menu-item:focus,
+:host ::ng-deep .ant-menu-submenu-active,
+:host ::ng-deep .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open {
+  color: #fff !important;
+}
+
+.caret-pic {
+  background: url('src/assets/img/caretdown.png') right center no-repeat;
+}
+
+.caret-pic:hover,
+.ant-menu-submenu-selected.caret-pic {
+  background: url('src/assets/img/caretup.png') right center no-repeat;
+}
+
+.third-menu {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0;
+  line-height: 30px;
+  height: 30px;
+  margin-bottom: 0 !important;
+}
+
+.third-menu:hover {
+  color: #000;
+}
+
+.first-menu {
+  color: #fff;
+}
+
+.first-menu ul li {
+  color: #757575;
+}
+
+.second-menu {
+  padding-left: 20px;
+  font-size: 16px;
+  color: #06a9f4;
+  line-height: 30px;
+  margin-bottom: 0 !important;
+  height: 30px;
+}
+
+.child-menu {
+  i {
+    color: #fff;
+    font-size: 12px;
+  }
+}
+
+.child-menu:hover,
+.child-menu:hover>.ant-menu-submenu-title {
+  color: #06a9f4;
+}
+
+.pic0 {
+  background: url('src/assets/img/ichost.png') left center no-repeat;
+}
+
+.pic1 {
+  background: url('src/assets/img/icOffice.png') left center no-repeat;
+}
+
+.pic2 {
+  background: url('src/assets/img/icjunior.png') left center no-repeat;
+}
