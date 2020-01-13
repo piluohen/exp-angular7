@@ -55,12 +55,10 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.prod.ts"
+              }],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -70,21 +68,17 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "4mb",
-                  "maximumError": "5mb"
-                }
-              ]
+              "budgets": [{
+                "type": "initial",
+                "maximumWarning": "4mb",
+                "maximumError": "5mb"
+              }]
             },
             "test": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.test.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.test.ts"
+              }],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -94,13 +88,11 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
+              "budgets": [{
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "5mb"
+              }]
             }
           }
         },
@@ -128,7 +120,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
-            "styles": ["src/theme.less", "src/assets/scss/index.scss"],
+            "styles": ["src/theme.less", "node_modules/hn-ui/hn-ui.css", "src/assets/scss/index.scss"],
             "scripts": [],
             "assets": ["src/favicon.ico", "src/assets"]
           }
