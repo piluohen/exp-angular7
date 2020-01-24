@@ -1,0 +1,41 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+#fengMap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -ms-touch-action: none;
+  touch-action: none;
+}
+
+.btnsSwitch {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: none;
+  width: 40px;
+  background-color: #fff;
+  -moz-box-shadow: 10px 10px 5px #888; /* 老的 Firefox */
+  box-shadow: 2px 2px 2px #888;
+}
+
+.btnsSwitch span {
+  display: block;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background: url('src/assets/fengmap/3D.png') center center no-repeat;
+  cursor: pointer;
+}
+
+.btnsSwitch span.planar {
+  background: url('src/assets/fengmap/2D.png') center center no-repeat;
+}

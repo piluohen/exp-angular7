@@ -1,1 +1,6 @@
 <div id="fengMap"></div>
+
+<!--工具控件，2D/3D切换-->
+<div id="btnsSwitch" class="btnsSwitch">
+  <span (click)='changeMode(this)' [ngClass]="planarFlag ? '':'planar'"></span>
+</div>
