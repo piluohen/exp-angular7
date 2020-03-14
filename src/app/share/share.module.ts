@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgxEchartsModule } from 'ngx-echarts';
+// import { NgxEchartsModule } from 'ngx-echarts';
 import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
@@ -64,7 +64,7 @@ const DIRECTIVES = [ScrollDirective];
 @NgModule({
   imports: [
     CommonModule,
-    NgxEchartsModule,
+    // NgxEchartsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,

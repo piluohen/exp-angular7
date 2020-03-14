@@ -7,7 +7,7 @@ import { FengmapComponent } from './fengmap/fengmap.component';
 const routes: Routes = [
   {
     path: '',
-    component: FengmapComponent
+    component: TreeComponent
   }
 ];
 
